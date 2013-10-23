@@ -431,7 +431,7 @@ figcaption {
 /********************* CONTACT START ************************/
 #contact {
   margin: 0 auto;
-  width: 70%;
+  width: 60%;
 }
 
 /*h2{
@@ -439,9 +439,8 @@ figcaption {
 }*/
 .contact_container .content_text {
   float: left;
-  width: 30%;
+  /*width: 30%;*/
   margin-left: 6%;
-  /*	margin-right: 2%;*/
   display: inline-block;
   padding-top: 2em;
 }

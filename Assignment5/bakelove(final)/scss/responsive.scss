@@ -24,6 +24,25 @@
 	width: 100% !important;
 }
 
+.contact_container .content_text{
+		margin-left: 24%;
+		width: 55%;
+		padding-top: 0;
+
+		.phone, .address{
+			margin-left: 15%;
+		}
+	}
+
+.map{
+	display: block;
+	width: 90% !important;
+}
+
+/*.googleMap iframe{
+		width: 30%;
+	}*/
+
 }
 
 
@@ -47,14 +66,58 @@
 	font-size: 1em;
 	font-weight: 600;
 }
-.about{
-	margin-left: 5% !important;
+
+#about{
+	width: 80%;
+
+	.about{
+		margin-left: 5% !important;
+	}
+
+
+	.about-text{
+		width: 100% !important;
+	}
+
+	.about-image{
+		width: 80% !important;
+		margin: 0 0 1em 3em !important;
+
+		img{
+			width: 90%;
+		}
+	}
 }
 
-.about-text{
-	width: 100% !important;
+#contact{
+	width: 80%;
+
+	.map{
+	display: block;
+	width: 90% !important;
+	float: left;
+	}
+
+	.contact_container .content_text{
+		width: 72%;
+		padding-top: 0;
+	}
 }
 
+#footer{
+	width: 80%;
 
+	.links{
+		width: 100%;
+	}
 
+	.logo-image {
+		float: none;
+		img{
+		float: none !important;
+		padding-top: 0 !important;
+
+	}
+	}
+}
 }
