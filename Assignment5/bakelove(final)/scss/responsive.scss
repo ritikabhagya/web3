@@ -39,9 +39,26 @@
 	width: 90% !important;
 }
 
-/*.googleMap iframe{
-		width: 30%;
-	}*/
+
+
+	.thm_first_column,
+  .thm_second_column,
+  .thm_third_column,
+  .thm_fourth_column{
+    width: 24%;
+  }
+
+  .career_bakery_photo{
+    width: 36%;
+    margin-left: 0;
+} 
+
+
+  .career_container .content_text{
+    width: 50%;
+    margin-bottom: 2.0em;
+    margin-top: 0;
+  }
 
 }
 
@@ -67,6 +84,14 @@
 	font-weight: 600;
 }
 
+h2{
+	font-size: 1.25em !important;
+}
+
+.about{
+	margin-left: 5% !important;
+}
+
 #about{
 	width: 80%;
 
@@ -88,6 +113,27 @@
 		}
 	}
 }
+
+.thm_first_column,
+  .thm_second_column,
+  .thm_third_column,
+  .thm_fourth_column{
+    display: inline-block;
+    width: 100%;
+  }
+
+  .career_bakery_photo{
+    width: 100%;
+    display: block;
+    margin: auto;
+  } 
+
+  .career_container .content_text{
+    width: 100%;
+    display: block;
+    margin: auto;
+    margin-bottom: 2.0em;
+  }
 
 #contact{
 	width: 80%;
@@ -113,11 +159,11 @@
 
 	.logo-image {
 		float: none;
-		img{
-		float: none !important;
-		padding-top: 0 !important;
+			img{
+			float: none !important;
+			padding-top: 0 !important;
 
+			}
+		}
 	}
-	}
-}
 }
