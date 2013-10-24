@@ -303,10 +303,10 @@ nav a:focus {
 #about .about-text {
   width: 50%;
   float: left;
-  padding: 1em 0;
+  padding-bottom: 1em;
 }
 #about .about-text p {
-  font-size: 0.8em;
+  font-size: .9em;
   line-height: 1.5em;
   color: #34495e;
 }
@@ -314,7 +314,7 @@ nav a:focus {
   width: 35%;
   float: left;
   margin-left: 8em;
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 /********************* ABOUT END ************************/
@@ -465,7 +465,7 @@ figcaption {
   display: inline-block;
   vertical-align: middle;
   line-height: 1.5em;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 .address {
@@ -487,7 +487,7 @@ figcaption {
   display: inline-block;
   vertical-align: middle;
   line-height: 1.5em;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 .map {
@@ -547,7 +547,7 @@ figcaption {
   margin-top: 1.5em;
   margin-left: 5em;
   line-height: 1.5em;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 .career_container .content_text a {
