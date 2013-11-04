@@ -1,32 +1,26 @@
-<!doctype html>
-<html>
-<body>
+<?php include('index.php'); ?>
 
 <?php
 	$biodatas = array();
 	$biodatas['Malika Khanna']=array(
-		'ethnicity'=>'punjabi',
+		'ethnicity'=>'Punjabi',
 		'name'=>'Malika Khanna',
-		'age'=>24
+		'age'=>24,
+		'location'=>array('city'=>'New York', 'country'=>'USA')
 		);
 	$biodatas['Chiragh Kirpalani']=array(
-		'ethnicity'=>'sindhi',
+		'ethnicity'=>'Sindhi',
 		'name'=>'Chiragh Kirpalani',
-		'age'=>27
+		'age'=>27,
+		'location'=>array('city'=>'New Delhi', 'country'=>'India')
 		);
-
-	echo $biodatas['Malika Khanna']['ethnicity']; ?><br><?php
-	echo $biodatas['Malika Khanna']['name']; ?><br><?php
-	echo $biodatas['Malika Khanna']['age']; ?><br><?php
+	$biodatas['Manasi Bhagia']=array(
+		'ethnicity'=>'Sindhi',
+		'name'=>'Manasi Bhagia',
+		'age'=>20,
+		'location'=>array('city'=>'Barcelona', 'country'=>'Spain')
+		);
 	?>
 
-	<?php
 
-	header('Access-Control-Origin: *');
-	header('Content-Type: application/json');
-	echo json_encode($biodatas);
 
-?>
-
-</body>
-</html>
