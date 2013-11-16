@@ -1,0 +1,116 @@
+@charset "UTF-8";
+html {
+  font-family: 'Raleway', sans-serif;
+}
+
+body{
+	margin: 0 auto;
+	width: 90%;
+}
+
+.row{
+	background-color: #eee;
+	padding: 20px;
+	font-size: 1.5em;
+	line-height: 1.5em;
+	margin: 0 auto;
+	width: 50%;
+	margin-top: 2em;
+}
+
+.join{
+	background: #76C3BD;
+	font-size: .5em;
+	font-weight: lighter;
+	display: block;
+	float: right;
+	padding: .3em .5em;
+	color: #fff;
+}
+
+h1{
+	font-weight: lighter;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 2em;
+}
+
+.nl-form{
+	width: 100%;
+	margin: 0 auto;
+	font-size: 2.5em;
+	line-height: 1.5em;
+	font-weight: lighter;
+	margin-top: 1.5em;
+	text-align: center;
+}
+
+.nl-form ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nl-form input,
+.nl-form select {
+	border: none;
+	background: transparent;
+	font-size: inherit;
+	font-weight: lighter !important;
+	line-height: inherit;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.nl-form input:focus {
+	outline: none;
+}
+
+.nl-form select{
+	color: #333;
+	font-weight: lighter;
+	border-bottom: 1px dashed #eee;
+}
+.nl-form select:hover{
+	color: #ccc;
+}
+
+
+input::-webkit-input-placeholder {
+	color: #eee;
+	font-weight: lighter !important;
+	border-bottom: 1px dashed #eee;
+}
+
+input:active::-webkit-input-placeholder ,
+input:focus::-webkit-input-placeholder {
+	color: #eee;
+	font-weight: lighter !important;
+}
+
+.nl-form .discussion{
+	width: 70%;
+}
+
+.nl-submit-wrap{
+	margin-top: 1em;
+}
+
+.nl-submit{
+	background: #76C3BD;
+	font-size: inherit;
+	border: none;
+	font-family: inherit;
+	font-weight: lighter;
+	display: inline-block;
+	padding: .5em 1em;
+	color: #fff;
+}
+
+
+
+
+
