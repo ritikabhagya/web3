@@ -6,20 +6,22 @@ html {
 body{
 	margin: 0 auto;
 	width: 90%;
+	background-color: #1abc9c;
 }
 
 .row{
-	background-color: #eee;
+	background-color: #34495e;
 	padding: 20px;
 	font-size: 1.5em;
 	line-height: 1.5em;
 	margin: 0 auto;
 	width: 50%;
 	margin-top: 2em;
+	color: #eee;
 }
 
 .join{
-	background: #76C3BD;
+	background: #e74c3c;
 	font-size: .5em;
 	font-weight: lighter;
 	display: block;
@@ -72,27 +74,38 @@ h1{
 .nl-form select{
 	color: #333;
 	font-weight: lighter;
-	border-bottom: 1px dashed #eee;
+	border-bottom: 1px solid #16a085;
 }
 .nl-form select:hover{
-	color: #ccc;
+	color: #16a085;
+}
+
+.nl-form select:focus{
+	outline: none;
 }
 
 
 input::-webkit-input-placeholder {
-	color: #eee;
+	color: #16a085;
 	font-weight: lighter !important;
-	border-bottom: 1px dashed #eee;
+	border-bottom: 1px solid #16a085;
+	font-size: .9em;
 }
 
 input:active::-webkit-input-placeholder ,
 input:focus::-webkit-input-placeholder {
-	color: #eee;
+	color: #16a085;
 	font-weight: lighter !important;
+	font-size: .9em;
+	border-bottom: 1px solid #16a085;
 }
 
 .nl-form .discussion{
-	width: 70%;
+	width: 65%;
+}
+
+.nl-form>input{
+	width: 24%;
 }
 
 .nl-submit-wrap{
@@ -100,7 +113,7 @@ input:focus::-webkit-input-placeholder {
 }
 
 .nl-submit{
-	background: #76C3BD;
+	background: #e74c3c;
 	font-size: inherit;
 	border: none;
 	font-family: inherit;
@@ -109,8 +122,4 @@ input:focus::-webkit-input-placeholder {
 	padding: .5em 1em;
 	color: #fff;
 }
-
-
-
-
 

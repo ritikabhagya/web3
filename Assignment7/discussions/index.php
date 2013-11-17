@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-	mysql_connect('localhost', 'root', 'root');
+	mysql_connect('localhost', 'root', 'bugzbunny19');
 	mysql_select_db('Biodata');
 
 	$username = $_POST['username'];
@@ -29,22 +29,21 @@
 				I am a
 
 				<select required name="gender">
-					<option value="default" selected>Boy</option>
 					<option value="boy">Boy</option>
 					<option value="girl">Girl</option>
 					<option value="man">Man</option>
-					<option value="woman">Woman</option>
+					<option value="woman" selected>Woman</option>
 				</select>
 				<br />
 
 				and my name is
-				<input type="text" name="username" placeholder="my name" required/>
+				<input type="text" name="username" placeholder="Sachin Tendulkar" required/>
 				<br />
 
-				Today I would like to talk about <input class="discussion" type="text" name="discussion" placeholder="how gay marriage should be made legal in India" required/>
+				Today I would like to talk about <input class="discussion" type="text" name="discussion" placeholder="why gay marriage should be made legal in India" required/>
 				
 				<div class="nl-submit-wrap">
-					<button class="nl-submit" type="submit" value="Submit" />Submit</button>
+					<button class="nl-submit" type="submit" value="Submit" name="submit"/>Submit</button>
 				</div>
 
 				<div class="nl-overlay"></div>
@@ -53,7 +52,7 @@
 			<p> <?php $query = mysql_query("SELECT username, discussion FROM discussion");
 			
 			while($row=mysql_fetch_array($query)){
-			?> <div class="row"> Name: <?php echo $row['username'];?><br>
+			?> <div class="row"> Name: <?php echo $row['username']; ?><br>
 			Discussion: <?php echo $row['discussion']; ?>
 				<a href="#"><div class="join">Join discussion</div></a>
 			</div><br>
