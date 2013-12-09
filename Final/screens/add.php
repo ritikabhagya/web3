@@ -7,22 +7,24 @@ include_once('includes/connection.php');
 	if (isset($_POST['name'], $_POST['title'])) {
 		$name = $_POST['name'];
 		$title = $_POST['title'];
-		$url = $_POST['url'];
+		$vimeo = $_POST['vimeo'];
+		$youtube = $_POST['youtube'];
 		$description = nl2br($_POST['description']);
 
 		//Adding images
 		// $image = addslashes(file_get_contents($_FILE['image']['tmp_name']));
 
 
-		if (empty($name) or empty($url)) {
+		if (empty($name) or empty($title) or empty($vimeo) && empty($youtube)) {
 			$error = 'All fields are required!';
 		} else {
-			$query = $pdo->prepare('INSERT INTO projects (student_name, project_title, project_url, project_description) VALUES (?, ?, ?, ?)');
+			$query = $pdo->prepare('INSERT INTO projects (student_name, project_title, project_url_vimeo, project_url_youtube, project_description) VALUES (?, ?, ?, ?, ?)');
 
 			$query->bindValue(1, $name);
 			$query->bindValue(2, $title);
-			$query->bindValue(3, $url);
-			$query->bindValue(4, $description);
+			$query->bindValue(3, $vimeo);
+			$query->bindValue(4, $youtube);
+			$query->bindValue(5, $description);
 
 			$query->execute();
 
@@ -39,9 +41,10 @@ include_once('includes/connection.php');
 
 		<body>
 			<div class="container">
-				<a href="index.php" id="logo">Main</a>
+				<a href="index.php" id="logo"><div id="cancel"></div></a>
 
 				<br>
+				<div class="form">
 
 				<h4>Add a new project</h4>
 
@@ -51,13 +54,16 @@ include_once('includes/connection.php');
 
 				<?php } ?>
 
-				<form action="add.php" method="post" enctype="multipart/form-data" autocomplete="off">
-					<input type="text" name="name" placeholder="Name" /><br><br>
-					<input type="text" name="title" placeholder="Project title" /><br><br>
-					<input type="text" name="url" placeholder="URL" /></textarea><br><br>
-					<textarea rows="15" cols="50" placeholder="Description" name="description"></textarea><br><br>
-					<input type="submit" value="Add Item" />
-				</form>
+				
+					<form action="add.php" method="post" enctype="multipart/form-data" autocomplete="off">
+						<input class="form" type="text" name="name" placeholder="Name" /><br><br>
+						<input class="form" type="text" name="title" placeholder="Project title" /><br><br>
+						<input class="video" type="text" name="vimeo" placeholder="Vimeo ID (example: 81335477)" /> OR
+						<input class="video" type="text" name="youtube" placeholder="Youtube ID (example: sgwhG6qjbcY)" /><br><br>
+						<textarea class="description" placeholder="Description" name="description"></textarea><br><br>
+						<input class="submit" type="submit" value="Add Item" />
+					</form>
+				</div>
 				
 			</div>
 			<?php include_once('index.php'); ?>

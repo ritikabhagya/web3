@@ -14,6 +14,7 @@ $items = $item->fetch_all();
 	<head>
 		<title>D+T Projects</title>
 		<link rel="stylesheet" href="css/main.css"/>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:700,300,500' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>

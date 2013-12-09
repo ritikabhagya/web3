@@ -28,18 +28,18 @@ $item = new Item;
 
 		<body>
 			<div class="container">
-				<a href="index.php" id="logo">Main</a>
+				<a href="index.php" id="logo"><div id="cancel"></div></a>
 
 				<br>
 
 				<h4>Select a Project to Delete:</h4>
 
-				<form action="delete.php" method="get">
+				<form class="options" action="delete.php" method="get">
 					<select onchange="this.form.submit();" name="id">
 						<option selected="selected">Select</option>
 						<?php foreach ($items as $item) { ?>
 							<option value="<?php echo $item['project_id']; ?>">
-								<?php echo $item['project_title']; ?>
+								<?php echo $item['student_name'], ': ', $item['project_title'] ?>
 							</option>
 						<?php } ?>
 
