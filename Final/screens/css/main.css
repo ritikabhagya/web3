@@ -1,11 +1,16 @@
 body{
-	padding-top: 20px;
-	font-family: Helvetica, Arial, sans-serif;
+/*	padding-top: 20px;
+*/	font-family: Helvetica, Arial, sans-serif;
+	background: #ecf0f1;
+
 }
 
-.container{
-	width: 500px;
+.container,
+.project-container{
+	width: 800px;
 	margin: 0 auto;
+	background: #27ae60;
+	top: 0;
 }
 
 a:link, a:visited {
@@ -19,4 +24,37 @@ a:hover{
 
 p{
 	line-height: 30px;
+}
+
+ul{
+	width: 700px;
+	margin: 0 auto;
+}
+
+li{
+	text-decoration: none;
+	list-style: none;
+	width: 700px;
+}
+
+.project{
+	position: relative;
+	width: 200px;
+	float: left;
+	background: #000;
+	padding: 60px 0 60px 0;
+	text-align: center;
+	margin: 5px;
+}
+
+.project a{
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 35px;
+    left: 0;
+    z-index: 10;
+    vertical-align: middle;
+    line-height: 22px;
+    font-size: 14px;
 }

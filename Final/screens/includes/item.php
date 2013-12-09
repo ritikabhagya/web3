@@ -4,17 +4,17 @@ class Item{
 	public function fetch_all(){
 		global $pdo;
 
-		$query = $pdo->prepare("SELECT * FROM items");
+		$query = $pdo->prepare("SELECT * FROM projects");
 		$query->execute();
 
 		return $query->fetchAll();
 	}
 
-	public function fetch_data($item_id){
+	public function fetch_data($project_id){
 		global $pdo;
 
-		$query = $pdo->prepare("SELECT * FROM items WHERE item_id=?");
-		$query->bindValue(1, $item_id);
+		$query = $pdo->prepare("SELECT * FROM projects WHERE project_id=?");
+		$query->bindValue(1, $project_id);
 		$query->execute();
 
 		return $query->fetch();

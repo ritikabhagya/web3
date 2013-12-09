@@ -4,25 +4,25 @@ session_start();
 
 include_once('includes/connection.php');
 
-// if (isset($_SESSION['logged_in'])) {
-	if (isset($_POST['title'], $_POST['description'])) {
+	if (isset($_POST['name'], $_POST['title'])) {
+		$name = $_POST['name'];
 		$title = $_POST['title'];
+		$url = $_POST['url'];
 		$description = nl2br($_POST['description']);
-		$price = $_POST['price'];
 
 		//Adding images
-		$image = addslashes(file_get_contents($_FILE['image']['tmp_name']));
+		// $image = addslashes(file_get_contents($_FILE['image']['tmp_name']));
 
 
-		if (empty($title) or empty($description)) {
+		if (empty($name) or empty($url)) {
 			$error = 'All fields are required!';
 		} else {
-			$query = $pdo->prepare('INSERT INTO items (item_title, item_description, item_price, item_image) VALUES (?, ?, ?, ?)');
+			$query = $pdo->prepare('INSERT INTO projects (student_name, project_title, project_url, project_description) VALUES (?, ?, ?, ?)');
 
-			$query->bindValue(1, $title);
-			$query->bindValue(2, $description);
-			$query->bindValue(3, $price);
-			$query->bindValue(4, $image);
+			$query->bindValue(1, $name);
+			$query->bindValue(2, $title);
+			$query->bindValue(3, $url);
+			$query->bindValue(4, $description);
 
 			$query->execute();
 
@@ -33,7 +33,7 @@ include_once('includes/connection.php');
 
 	<html>
 		<head>
-			<title>Bakelove CMS</title>
+			<title>D+T Projects</title>
 			<link rel="stylesheet" href="../css/main.css"/>
 		</head>
 
@@ -43,7 +43,7 @@ include_once('includes/connection.php');
 
 				<br>
 
-				<h4>Add Item</h4>
+				<h4>Add a new project</h4>
 
 				<?php if (isset($error)) { ?>
 					<small style="color:#dd0017;"><?php echo $error; ?></small>
@@ -52,10 +52,10 @@ include_once('includes/connection.php');
 				<?php } ?>
 
 				<form action="add.php" method="post" enctype="multipart/form-data" autocomplete="off">
-					<input type="text" name="title" placeholder="Title" /><br><br>
-					<input type="text" name="price" placeholder="Price" /><br><br>
+					<input type="text" name="name" placeholder="Name" /><br><br>
+					<input type="text" name="title" placeholder="Project title" /><br><br>
+					<input type="text" name="url" placeholder="URL" /></textarea><br><br>
 					<textarea rows="15" cols="50" placeholder="Description" name="description"></textarea><br><br>
-					<input type="file" name="image">
 					<input type="submit" value="Add Item" />
 				</form>
 				
@@ -63,10 +63,3 @@ include_once('includes/connection.php');
 			<?php include_once('index.php'); ?>
 		</body>
 	</html>
-
-<?php
-// } else {
-// 	header('Location: index.php');
-// }
-
-?>

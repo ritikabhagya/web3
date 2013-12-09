@@ -17,22 +17,20 @@ $items = $item->fetch_all();
 	</head>
 
 	<body>
-		<div class="container">
+		<div class="project-container">
 			<?php include_once('main.php'); ?>
-			<!-- <a href="index.php" id="logo">CMS</a> -->
 
 			<ul>
 				<?php foreach ($items as $item) { ?>
 					<li>
-						<a href="item.php?id=<?php echo $item['item_id']; ?>">
-							<?php echo $item['item_title']; ?><br>
-						</a>
+						<div class="project"><a href="item.php?id=<?php echo $item['project_id']; ?>">
+							<?php echo $item['project_title']; ?><br>
+							<?php echo $item['student_name']; ?><br>
+						</a></div>
 					</li>
 					
 				<?php } ?>
 			</ul>
-			<!-- <br>
-			<small><a href="admin">admin</a></small> -->
 
 		</div>
 	</body>

@@ -13,23 +13,24 @@ if (isset($_GET['id'])) {
 
 	<html>
 		<head>
-			<title>Bakelove CMS</title>
+			<title>D+T Projects</title>
 			<link rel="stylesheet" href="css/main.css"/>
 		</head>
 
 		<body>
 			<div class="container">
-				<a href="index.php" id="logo">CMS</a>
+				<a href="index.php">&larr; Back</a>
 
 				<h4>
-					<?php echo $data['item_title']; ?>
+					<?php echo $data['student_name']; ?>
 				</h4>
-				<h5><?php echo $data['item_price']; ?></h5>
+				<h5><?php echo $data['project_title']; ?></h5>
 
-				<p><?php echo $data['item_description']; ?></p>
-				<div><img src="data:image/jpg;base64,<?php echo $data['item_image']; ?>"/> </div>
+				<p><?php echo $data['project_url']; ?></p>
 
-				<a href="index.php">&larr; Back</a>
+				<p><?php echo $data['project_description']; ?></p>
+
+				
 			</div>
 		</body>
 	</html>
