@@ -1,0 +1,22 @@
+body{
+	padding-top: 20px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.container{
+	width: 500px;
+	margin: 0 auto;
+}
+
+a:link, a:visited {
+	color: slateGray;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #444;
+}
+
+p{
+	line-height: 30px;
+}
