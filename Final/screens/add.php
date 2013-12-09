@@ -59,7 +59,8 @@ include_once('includes/connection.php');
 						<input class="form" type="text" name="name" placeholder="Name" /><br><br>
 						<input class="form" type="text" name="title" placeholder="Project title" /><br><br>
 						<input class="video" type="text" name="vimeo" placeholder="Vimeo ID (example: 81335477)" /> OR
-						<input class="video" type="text" name="youtube" placeholder="Youtube ID (example: sgwhG6qjbcY)" /><br><br>
+						<input class="video" type="text" name="youtube" placeholder="Youtube ID (example: sgwhG6qjbcY)" /><br>
+						<h6>The vimeo/youtube ID can be found in the URL of your video</h6>
 						<textarea class="description" placeholder="Description" name="description"></textarea><br><br>
 						<input class="submit" type="submit" value="Add Item" />
 					</form>

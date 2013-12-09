@@ -35,7 +35,7 @@ if (isset($_GET['id'])) {
 				<?php 
 					if (empty ($data['project_url_vimeo'])) {
 				?>
-				<p><iframe width="800" height="450" src="//www.youtube.com/embed/<?php echo $data['project_url_youtube']; ?>" frameborder="0" allowfullscreen></iframe></p>
+				<p><iframe width="800" height="450" src="//www.youtube.com/embed/<?php echo $data['project_url_youtube']; ?>?rel=0" frameborder="0" allowfullscreen></iframe></p>
 				<?php } ?>
 			</div>
 		</body>
