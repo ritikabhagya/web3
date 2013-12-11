@@ -7,18 +7,34 @@ include_once('includes/connection.php');
 	if (isset($_POST['name'], $_POST['title'])) {
 		$name = $_POST['name'];
 		$title = $_POST['title'];
-		$vimeo = $_POST['vimeo'];
-		$youtube = $_POST['youtube'];
-		$description = nl2br($_POST['description']);
 
-		//Adding images
-		// $image = addslashes(file_get_contents($_FILE['image']['tmp_name']));
+		if (preg_match('/vimeo\.com\/([0-9]+)/', $_POST['vimeo'], $vimeomatches)) {
+			$vimeo = $vimeomatches[1];
+		} else {
+			$vimeo = '';
+		}
+
+		if (preg_match('/youtube\.com(.+)v=([^&]+)/', $_POST['youtube'], $youtubematches)) {
+			$youtube = $youtubematches[2];
+		} else if (preg_match('/youtu\.be\/([\w\-.]+)/', $_POST['youtube'], $youtubematches)) {
+			$youtube = $youtubematches[1];
+		} else {
+			$youtube = '';
+		}
+		
+		// $youtube = $_POST['youtube'];
+		$description = nl2br($_POST['description']);
 
 
 		if (empty($name) or empty($title) or empty($vimeo) && empty($youtube)) {
 			$error = 'All fields are required!';
 		} else {
+
+
 			$query = $pdo->prepare('INSERT INTO projects (student_name, project_title, project_url_vimeo, project_url_youtube, project_description) VALUES (?, ?, ?, ?, ?)');
+
+			// $query2 = $pdo->prepare('SELECT project_url_vimeo, SUBSTRING(project_url_vimeo,-8) FROM projects WHERE project_id = ?');
+		
 
 			$query->bindValue(1, $name);
 			$query->bindValue(2, $title);
@@ -27,6 +43,12 @@ include_once('includes/connection.php');
 			$query->bindValue(5, $description);
 
 			$query->execute();
+
+			// $query2 = $pdo->prepare('UPDATE projects SET project_url_vimeo = SUBSTRING(project_url_vimeo,-8) WHERE project_id = ?');
+		// $query2->bindValue(1, $id);
+
+		// $query2->execute();
+
 
 			header('Location: index.php');
 		}

@@ -15,6 +15,8 @@ $item = new Item;
 		$query->execute();
 
 		header('Location: delete.php');
+
+		
 	}
 
 	$items = $item->fetch_all();
