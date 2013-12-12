@@ -18,26 +18,34 @@ if (isset($_GET['id'])) {
 		</head>
 
 		<body>
-			<div class="container">
-				<div class="back"><a href="index.php">&larr; Projects</a></div>
 
-				<h4>
-					<?php echo $data['project_title']; ?>
+
+			<div class="itemcontainer">
+				<div class="add"><a href="index.php">&larr; Projects</a></div>
+
+				<h4 class="itemheading">
+					<?php echo $data['project_title']; ?> by <?php echo $data['student_name']; ?>
 				</h4>
-				<h5><?php echo $data['student_name']; ?></h5>
 
 				<p class="project-description"><?php echo $data['project_description']; ?></p>
+
 				<?php 
 					if (empty ($data['project_url_youtube'])) {
 				?>
-				<p><iframe src="//player.vimeo.com/video/<?php echo $data['project_url_vimeo']; ?>?byline=0&amp;color=ffffff" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+				<div class="videowrapper">
+					<iframe src="//player.vimeo.com/video/<?php echo $data['project_url_vimeo']; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
 				<?php } ?>
 				<?php 
 					if (empty ($data['project_url_vimeo'])) {
 				?>
-				<p><iframe width="800" height="450" src="//www.youtube.com/embed/<?php echo $data['project_url_youtube']; ?>?rel=0" frameborder="0" allowfullscreen></iframe></p>
+				<div class="videowrapper">
+					<iframe width="800" height="450" src="//www.youtube.com/embed/<?php echo $data['project_url_youtube']; ?>?rel=0" frameborder="0" allowfullscreen></iframe>
+				</div>
 				<?php } ?>
+				
 			</div>
+
 		</body>
 	</html>
 

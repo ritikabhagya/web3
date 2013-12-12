@@ -31,10 +31,7 @@ include_once('includes/connection.php');
 		} else {
 
 
-			$query = $pdo->prepare('INSERT INTO projects (student_name, project_title, project_url_vimeo, project_url_youtube, project_description) VALUES (?, ?, ?, ?, ?)');
-
-			// $query2 = $pdo->prepare('SELECT project_url_vimeo, SUBSTRING(project_url_vimeo,-8) FROM projects WHERE project_id = ?');
-		
+			$query = $pdo->prepare('INSERT INTO projects (student_name, project_title, project_url_vimeo, project_url_youtube, project_description) VALUES (?, ?, ?, ?, ?)');		
 
 			$query->bindValue(1, $name);
 			$query->bindValue(2, $title);
@@ -43,11 +40,6 @@ include_once('includes/connection.php');
 			$query->bindValue(5, $description);
 
 			$query->execute();
-
-			// $query2 = $pdo->prepare('UPDATE projects SET project_url_vimeo = SUBSTRING(project_url_vimeo,-8) WHERE project_id = ?');
-		// $query2->bindValue(1, $id);
-
-		// $query2->execute();
 
 
 			header('Location: index.php');
@@ -80,9 +72,9 @@ include_once('includes/connection.php');
 					<form action="add.php" method="post" enctype="multipart/form-data" autocomplete="off">
 						<input class="form" type="text" name="name" placeholder="Name" /><br><br>
 						<input class="form" type="text" name="title" placeholder="Project title" /><br><br>
-						<input class="video" type="text" name="vimeo" placeholder="Vimeo ID (example: 81335477)" /> OR
-						<input class="video" type="text" name="youtube" placeholder="Youtube ID (example: sgwhG6qjbcY)" /><br>
-						<h6>The vimeo/youtube ID can be found in the URL of your video</h6>
+						<input class="video" type="text" name="vimeo" placeholder="Vimeo URL" /> OR<br><br>
+						<input class="video" type="text" name="youtube" placeholder="Youtube URL" /><br>
+						<!-- <h6>The vimeo/youtube ID can be found in the URL of your video</h6> -->
 						<textarea class="description" placeholder="Description" name="description"></textarea><br><br>
 						<input class="submit" type="submit" value="Add Item" />
 					</form>

@@ -15,10 +15,11 @@ include_once('includes/connection.php');
 
 		<body>
 			<div class="container">
-
+				<div class="logo"><img src="img/DTlogo.png"></div>
 				<ol class="menu">
 					<li><div class="add"><a href="add.php">Add your project</a></div></li>
 					<li><div class="add"><a href="delete.php">Delete projects</a></div></li>
+					<li><div class="add"><a href="delete.php">Project showcase</a></div></li>
 				</ol>
 			</div>
 		</body>
