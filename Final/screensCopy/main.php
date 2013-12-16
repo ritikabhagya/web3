@@ -19,7 +19,7 @@ include_once('includes/connection.php');
 				<ol class="menu">
 					<li><div class="add"><a href="add.php">Add your project</a></div></li>
 					<li><div class="add"><a href="delete.php">Delete projects</a></div></li>
-					<li><div class="add"><a href="showcase.php">Project showcase</a></div></li>
+					<li><div class="add"><a href="delete.php">Project showcase</a></div></li>
 				</ol>
 			</div>
 		</body>

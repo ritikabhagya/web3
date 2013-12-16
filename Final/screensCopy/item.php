@@ -21,13 +21,14 @@ if (isset($_GET['id'])) {
 
 
 			<div class="itemcontainer">
-				<div class="add2"><a href="index.php">&larr; Back to all Projects</a></div>
+				<div class="add"><a href="index.php">&larr; Projects</a></div>
 
 				<h4 class="itemheading">
 					<?php echo $data['project_title']; ?> by <?php echo $data['student_name']; ?>
 				</h4>
 
 				<p class="project-description"><?php echo $data['project_description']; ?></p>
+
 				<?php 
 					if (empty ($data['project_url_youtube'])) {
 				?>
@@ -35,7 +36,6 @@ if (isset($_GET['id'])) {
 					<iframe src="//player.vimeo.com/video/<?php echo $data['project_url_vimeo']; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</div>
 				<?php } ?>
-				
 				<?php 
 					if (empty ($data['project_url_vimeo'])) {
 				?>

@@ -8,6 +8,12 @@ include_once('includes/connection.php');
 		$name = $_POST['name'];
 		$title = $_POST['title'];
 
+		if (preg_match('/vimeo\.com\/([0-9]+)/', $_POST['vimeo'], $vimeomatches)) {
+			$vimeo = $vimeomatches[1];
+		} else {
+			$vimeo = '';
+		}
+
 		if (preg_match('/youtube\.com(.+)v=([^&]+)/', $_POST['youtube'], $youtubematches)) {
 			$youtube = $youtubematches[2];
 		} else if (preg_match('/youtu\.be\/([\w\-.]+)/', $_POST['youtube'], $youtubematches)) {
@@ -15,7 +21,8 @@ include_once('includes/connection.php');
 		} else {
 			$youtube = '';
 		}
-
+		
+		// $youtube = $_POST['youtube'];
 		$description = nl2br($_POST['description']);
 
 
@@ -24,12 +31,14 @@ include_once('includes/connection.php');
 		} else {
 
 
-			$query = $pdo->prepare('INSERT INTO projects (student_name, project_title, project_url_youtube, project_description) VALUES (?, ?, ?, ?)');		
+			$query = $pdo->prepare('INSERT INTO projects (student_name, project_title, project_url_vimeo, project_url_youtube, project_description) VALUES (?, ?, ?, ?, ?)');		
 
 			$query->bindValue(1, $name);
 			$query->bindValue(2, $title);
-			$query->bindValue(3, $youtube);
-			$query->bindValue(4, $description);
+			$query->bindValue(3, $vimeo);
+			$query->bindValue(4, $youtube);
+			$query->bindValue(5, $description);
+
 			$query->execute();
 
 
@@ -61,10 +70,12 @@ include_once('includes/connection.php');
 
 				
 					<form action="add.php" method="post" enctype="multipart/form-data" autocomplete="off">
-						<input class="form" type="text" name="name" placeholder="Please enter your name here." /><br><br>
-						<input class="form" type="text" name="title" placeholder="Name of your project?" /><br><br>
-						<input class="video" type="text" name="youtube" placeholder="Youtube URL goes here." /><br>
-						<textarea class="description" placeholder="Description" maxlength="500" name="description"></textarea><br><br>
+						<input class="form" type="text" name="name" placeholder="Name" /><br><br>
+						<input class="form" type="text" name="title" placeholder="Project title" /><br><br>
+						<input class="video" type="text" name="vimeo" placeholder="Vimeo URL" /> OR<br><br>
+						<input class="video" type="text" name="youtube" placeholder="Youtube URL" /><br>
+						<!-- <h6>The vimeo/youtube ID can be found in the URL of your video</h6> -->
+						<textarea class="description" placeholder="Description" name="description"></textarea><br><br>
 						<input class="submit" type="submit" value="Add Item" />
 					</form>
 				</div>
